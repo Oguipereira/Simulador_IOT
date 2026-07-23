@@ -128,7 +128,105 @@ def gerar_temperatura (combustivel, velocidades):
         temperaturas.append(temperatura)
     return np.array(temperaturas)
 
+def gerar_dados_completos(num_empilhadeiras =300, num_dias=30):
+    """Função principal que junta tudo.
+ 
+    Cria um DataFrame com:
+      300 empilhadeiras
+      30 dias de simulação
+      Eventos a cada 1 minuto durante turno (8-17h)
+      menos fds
+ 
+    Configurações bases:
+        num_empilhadeiras: quantas empilhadeiras
+        num_dias: quantos dias de simulação[]
+        cada empilhadeira tem 1 a 4 operadores revezantes
+        Operador que está trabalhando (alterna a cada 4 horas)
 
+ 
+    Retornos:
+        DataFrame com colunas:
+          empilhadeira_id, operador_id, timestamp, latitude, longitude,
+          velocidade, combustivel, peso_carga, temperatura_motor, tempo_parada"""
 
+    dados_lista = []
+    data_inicio = datetime(2026, 1, 1)
+    print(f"Gerando dados para {num_empilhadeiras} empilhadeiras durante {num_dias} dias...")
+    for empilhadeira_id in range(num_empilhadeiras):
+        if empilhadeira_id % 50 == 0:
+            print(f"Empilhadeira{empilhadeira_id}/{num_empilhadeiras}")
+        num_operadores = np.random.randint(1, 4)
+        operadores = [np.random.randint(1000, 9999) for _ in range(num_operadores)]
 
+        for dia in range(num_dias):
+            data_atual = data_inicio + timedelta(days=dia)
 
+            if data_atual.weekday() >= 5:
+                continue
+            timestamps = gerar_timestamp_trabalho(data_atual, empilhadeira_id)
+            num_eventos = len(timestamps)
+
+            lats, lngs, velocidades = gerar_rotas_simuladas(num_eventos)
+            carga_media = np.random.uniform(500, 2000)
+            cargas = np.random.normal(carga_media, 300,num_eventos)
+            cargas = np.clip(cargas, 0, 3000)
+            combustivel = gerar_combustivel(velocidades, cargas.mean())
+            temperatura = gerar_temperatura(combustivel, velocidades)
+ 
+            # Tempo parado: quanto tempo a empilhadeira fica sem se mover
+            # (indicador de eficiência)
+            tempo_parado = np.where(velocidades == 0, 1, 0)
+            tempo_parado_acumulado = np.cumsum(tempo_parado)  # Minutos parado no dia
+ 
+            operador_id_eventos = []
+            for i in range(num_eventos):
+                idx_operador = (i // 240) % len(operadores)
+                operador_id_eventos.append(operadores[idx_operador])
+ 
+            # Monta o DataFrame do dia
+            df_dia = pd.DataFrame({
+                'empilhadeira_id': empilhadeira_id,
+                'operador_id': operador_id_eventos,
+                'timestamp': timestamps,
+                'latitude': lats,
+                'longitude': lngs,
+                'velocidade_kmh': velocidades,
+                'combustivel_pct': combustivel,
+                'peso_carga_kg': cargas,
+                'temperatura_motor_celsius': temperatura,
+                'tempo_parado_minutos': tempo_parado_acumulado,
+            })
+ 
+            dados_lista.append(df_dia)
+ 
+    # Junta tudo em um único DataFrame
+    df_completo = pd.concat(dados_lista, ignore_index=True)
+ 
+    print(f"✓ Dados gerados: {len(df_completo):,} eventos")
+    print(f"  Datas: {df_completo['timestamp'].min()} a {df_completo['timestamp'].max()}")
+    print(f"  Empilhadeiras: {df_completo['empilhadeira_id'].nunique()}")
+    print(f"  Operadores: {df_completo['operador_id'].nunique()}")
+ 
+    return df_completo
+
+ 
+if __name__ == "__main__":
+ 
+    if not os.path.exists('dados'):
+        os.makedirs('dados')
+ 
+    df = gerar_dados_completos(num_empilhadeiras=300, num_dias=30)
+ 
+    caminho_saida = 'dados/telemetria.parquet'
+    df.to_parquet(caminho_saida, index=False)
+    print(f"\n✓ Salvo em: {caminho_saida}")
+ 
+    print("\n=== Primeiras linhas dos dados ===")
+    print(df.head())
+ 
+    print("\n=== Info dos dados ===")
+    print(df.info())
+ 
+    print("\n=== Estatísticas ===")
+    print(df.describe())
+ 
