@@ -1,0 +1,3 @@
+dados/*.parquet
+__pycache__/
+*.pyc

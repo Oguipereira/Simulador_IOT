@@ -68,7 +68,6 @@ def gerar_rotas_simuladas(num_eventos):
             velocidade = 0 
 
         velocidades.append(velocidade)
-    velocidades.append(velocidade)
     return np.array(latitudes), np.array(longitudes), np.array(velocidades)
 
 def gerar_combustivel(velocidades, carga_transportada):
@@ -97,7 +96,7 @@ def gerar_combustivel(velocidades, carga_transportada):
         consumo_minuto = consumo_base + consumo_dinamico
 
         # pensando em um consumo real com aleatoriedade
-        consumo_real = consumo_real * np.random.uniform(0.8, 1.2)
+        consumo_real = consumo_minuto * np.random.uniform(0.8, 1.2)
         combustivel -= consumo_real
 
         combustivel = max(0, combustivel)
@@ -170,7 +169,7 @@ def gerar_dados_completos(num_empilhadeiras =300, num_dias=30):
             carga_media = np.random.uniform(500, 2000)
             cargas = np.random.normal(carga_media, 300,num_eventos)
             cargas = np.clip(cargas, 0, 3000)
-            combustivel = gerar_combustivel(velocidades, cargas.mean())
+            combustivel = gerar_combustivel(velocidades, cargas)
             temperatura = gerar_temperatura(combustivel, velocidades)
  
             # Tempo parado: quanto tempo a empilhadeira fica sem se mover
@@ -216,14 +215,12 @@ if __name__ == "__main__":
         os.makedirs('dados')
  
     df = gerar_dados_completos(num_empilhadeiras=300, num_dias=30)
- 
     caminho_saida = 'dados/telemetria.parquet'
     df.to_parquet(caminho_saida, index=False)
     print(f"\n✓ Salvo em: {caminho_saida}")
  
-    print("\n=== Primeiras linhas dos dados ===")
+    print("\n=== Primeiras linhas dos dados ===")   
     print(df.head())
- 
     print("\n=== Info dos dados ===")
     print(df.info())
  
