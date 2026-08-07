@@ -63,9 +63,7 @@ for coluna in df.columns:
     unicos = df[coluna].nunique()
     print(f"  {coluna}: {unicos} valores únicos")
 
-# ============================================================================
-# PASSO 4: PERGUNTAS SIMPLES
-# ============================================================================
+
 
 print("\n\n" + "="*80)
 print("PERGUNTAS SIMPLES AOS DADOS")
@@ -106,7 +104,7 @@ temp_min = df['temperatura_motor_celsius'].min()
 temp_max = df['temperatura_motor_celsius'].max()
 print(f" Temperatura: mín={temp_min:.1f}°C, média={temp_media:.1f}°C, máx={temp_max:.1f}°C")
 
-# PASSO 5: Visualização dos dados
+#  Visualização dos dados
 
 print("\n\n" + "="*80)
 print("VISUALIZANDO OS DADOS")
