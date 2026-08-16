@@ -31,7 +31,7 @@ print("-" * 80)
 
 df = pd.read_parquet('dados/telemetria.parquet')
 
-print(f"✓ Dados carregados!")
+print(f"Dados carregados!")
 print(f"  Tamanho: {df.shape[0]:,} linhas")
 print(f"  Colunas: {df.shape[1]}")
 print(f"  Memória: {df.memory_usage(deep=True).sum() / 1024**2:.1f} MB\n")
@@ -63,9 +63,6 @@ for coluna in df.columns:
     unicos = df[coluna].nunique()
     print(f"  {coluna}: {unicos} valores únicos")
 
-# ============================================================================
-# PASSO 4: PERGUNTAS SIMPLES
-# ============================================================================
 
 print("\n\n" + "="*80)
 print("PERGUNTAS SIMPLES AOS DADOS")
