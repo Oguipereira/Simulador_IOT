@@ -1,12 +1,4 @@
-"""
-ARQUIVO 3: ANÁLISE SQL COM DUCKDB
-=================================
 
-DuckDB é um banco de dados SQL super rápido pra análise.
-Sem necessidade de instalar servidor, tudo é local.
-
-Execute com: python 3_analise_sql.py
-"""
 
 import duckdb
 import pandas as pd
@@ -15,9 +7,6 @@ print("=" * 80)
 print("ANÁLISE SQL COM DUCKDB")
 print("=" * 80)
 
-# ============================================================================
-# CONECTAR AO DUCKDB E CARREGAR DADOS
-# ============================================================================
 
 print("\nCONECTANDO AO DUCKDB...")
 
@@ -300,3 +289,4 @@ DADOS PRONTOS
 # Fecha conexão
 conn.close()
 print("Resultados salvos em: resultados/")
+print("=" * 80)
