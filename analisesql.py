@@ -38,15 +38,8 @@ result = conn.execute("SELECT COUNT(*) as total FROM telemetria").fetchall()
 total_linhas = result[0][0]
 print(f"   ✓ Total de linhas: {total_linhas:,}")
 
-# ============================================================================
-# QUERIES SQL - PERGUNTAS REAIS DE NEGÓCIO
-# ============================================================================
+print("executando querys do banco")
 
-print("\n" + "=" * 80)
-print("QUERIES SQL - PERGUNTAS DE NEGÓCIO")
-print("=" * 80)
-
-# QUERY 1: Consumo total por empilhadeira
 print("\nQUERY 1: Qual empilhadeira consumiu mais combustível?")
 print("-" * 80)
 
@@ -67,9 +60,7 @@ LIMIT 10
 df1 = conn.execute(query1).df()
 print(df1.to_string(index=False))
 
-# QUERY 2: Eficiência por operador
 print("\nQUERY 2: Qual operador é mais eficiente?")
-print("-" * 80)
 
 query2 = """
 SELECT
@@ -88,9 +79,7 @@ LIMIT 10
 df2 = conn.execute(query2).df()
 print(df2.to_string(index=False))
 
-# QUERY 3: Horas de operação por dia
-print("\n4️⃣ QUERY 3: Quantas horas cada dia teve operação?")
-print("-" * 80)
+print("\nQUERY 3: Quantas horas cada dia teve operação?")
 
 query3 = """
 SELECT
@@ -106,9 +95,7 @@ ORDER BY data ASC
 df3 = conn.execute(query3).df()
 print(df3.to_string(index=False))
 
-# QUERY 4: Empilhadeiras com possível problema de manutenção
-print("\nQUERY 4: Quais empilhadeiras têm sinais de manutenção necessária?")
-print("-" * 80)
+print("\nQuais empilhadeiras têm sinais de manutenção necessária?")
 
 query4 = """
 SELECT
@@ -131,9 +118,7 @@ if len(df4) > 0:
 else:
     print("   Nenhuma empilhadeira com sinais críticos de manutenção")
 
-# QUERY 5: Padrão de velocidade vs combustível
-print("\nQUERY 5: Como velocidade impacta consumo?")
-print("-" * 80)
+print("\nComo velocidade impacta consumo?")
 
 query5 = """
 SELECT
@@ -155,9 +140,7 @@ ORDER BY num_eventos DESC
 df5 = conn.execute(query5).df()
 print(df5.to_string(index=False))
 
-# QUERY 6: Eficiência de carga
-print("\nQUERY 6: Como carga impacta consumo?")
-print("-" * 80)
+print("\nComo carga impacta consumo?")
 
 query6 = """
 SELECT
@@ -180,9 +163,7 @@ ORDER BY num_eventos DESC
 df6 = conn.execute(query6).df()
 print(df6.to_string(index=False))
 
-# QUERY 7: Top 10 operador-empilhadeira combinações mais eficientes
-print("\nQUERY 7: Qual dupla (operador + empilhadeira) é mais eficiente?")
-print("-" * 80)
+print("\nQual dupla (operador + empilhadeira) é mais eficiente?")
 
 query7 = """
 SELECT
@@ -202,9 +183,7 @@ LIMIT 10
 df7 = conn.execute(query7).df()
 print(df7.to_string(index=False))
 
-# QUERY 8: Análise de parada (tempo ocioso)
-print("\nQUERY 8: Qual empilhadeira fica mais tempo parada?")
-print("-" * 80)
+print("\nQual empilhadeira fica mais tempo parada?")
 
 query8 = """
 SELECT
@@ -222,9 +201,7 @@ LIMIT 10
 df8 = conn.execute(query8).df()
 print(df8.to_string(index=False))
 
-# QUERY 9: Combustível crítico - quando o tanque fica muito vazio
-print("\nQUERY 9: Quantas vezes tanque ficou crítico (<10%)?")
-print("-" * 80)
+print("\nQuantas vezes tanque ficou crítico (<10%)?")
 
 query9 = """
 SELECT
@@ -242,9 +219,7 @@ LIMIT 10
 df9 = conn.execute(query9).df()
 print(df9.to_string(index=False))
 
-# QUERY 10: Resumo estatístico por hora do dia
-print("\nQUERY 10: Padrão de operação por hora do dia")
-print("-" * 80)
+print("\nPadrão de operação por hora do dia")
 
 query10 = """
 SELECT
@@ -264,11 +239,8 @@ print(df10.to_string(index=False))
 
 # EXPORTAR RESULTADOS
 
-print("\n" + "=" * 80)
-print("EXPORTANDO RESULTADOS")
-print("=" * 80)
+print("Exportando os resultados das queries")
 
-# Salva cada resultado como CSV pra referência futura
 resultados = {
     'consumo_empilhadeiras': df1,
     'eficiencia_operadores': df2,
@@ -287,11 +259,7 @@ for nome, df in resultados.items():
     df.to_csv(arquivo, index=False)
     print(f"   ✓ {arquivo}")
 
-# INSIGHTS FINAIS
 
-print("\n" + "=" * 80)
-print("INSIGHTS DAS QUERIES SQL")
-print("=" * 80)
 
 kpi_consumo = conn.execute("""
     SELECT
@@ -331,6 +299,4 @@ DADOS PRONTOS
 
 # Fecha conexão
 conn.close()
-print("\nAnálise SQL concluída!")
 print("Resultados salvos em: resultados/")
-print("=" * 80)

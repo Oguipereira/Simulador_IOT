@@ -1,5 +1,5 @@
 """
-A ideia é ter mos a EXPLORAÇÃO DE DADOS (EDA - Exploratory Data Analysis)
+A ideia é ter mos a EXPLORAÇÃO DE DADOS 
 
   Você tem dados brutos e faz perguntas:
   - Quais colunas tenho?
