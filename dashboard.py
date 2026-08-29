@@ -301,7 +301,7 @@ elif pagina == "Preditor de Consumo":
 # PÁGINA 3: ANÁLISE DE DADOS
 # ============================================================================
 
-elif pagina == "Análise dos Dados":
+elif pagina == "Análise de Dados":
     st.header("Análise Detalhada de Dados")
 
     # Filtros
@@ -316,10 +316,13 @@ elif pagina == "Análise dos Dados":
         )
 
     with col2:
+        operadores_das_empilhadeiras = sorted(
+            df[df['empilhadeira_id'].isin(empilhadeiras_selecionadas)]['operador_id'].unique()
+        )
         operadores_selecionados = st.multiselect(
             "Selecione Operadores",
             options=sorted(df['operador_id'].unique()),
-            default=list(sorted(df['operador_id'].unique()))[:5]
+            default=operadores_das_empilhadeiras
         )
 
     # Filtrar dados
