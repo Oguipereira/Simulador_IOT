@@ -1,0 +1,581 @@
+{
+  "largura": 100.0,
+  "altura": 60.0,
+  "zonas": {
+    "recebimento": {
+      "tipo": "recebimento",
+      "x_min": 0.0,
+      "x_max": 20.0,
+      "y_min": 0.0,
+      "y_max": 60.0,
+      "doca": [
+        10.0,
+        30.0
+      ]
+    },
+    "armazenagem": {
+      "tipo": "armazenagem",
+      "x_min": 20.0,
+      "x_max": 80.0,
+      "y_min": 0.0,
+      "y_max": 60.0,
+      "doca": [
+        50.0,
+        30.0
+      ]
+    },
+    "expedicao": {
+      "tipo": "expedicao",
+      "x_min": 80.0,
+      "x_max": 100.0,
+      "y_min": 0.0,
+      "y_max": 60.0,
+      "doca": [
+        90.0,
+        30.0
+      ]
+    }
+  },
+  "racks": [
+    {
+      "rack_id": 0,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 4.0,
+      "sku": "SKU-8270",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 1,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 9.777777777777779,
+      "sku": "SKU-1860",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 2,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 15.555555555555555,
+      "sku": "SKU-6191",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 3,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 21.333333333333332,
+      "sku": "SKU-6734",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 4,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 27.11111111111111,
+      "sku": "SKU-1466",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 5,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 32.888888888888886,
+      "sku": "SKU-5426",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 6,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 38.666666666666664,
+      "sku": "SKU-9322",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 7,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 44.44444444444444,
+      "sku": "SKU-1769",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 8,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 50.22222222222222,
+      "sku": "SKU-7949",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 9,
+      "corredor": 24.0,
+      "x": 24.0,
+      "y": 56.0,
+      "sku": "SKU-6311",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 10,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 4.0,
+      "sku": "SKU-7420",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 11,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 9.777777777777779,
+      "sku": "SKU-5555",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 12,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 15.555555555555555,
+      "sku": "SKU-7396",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 13,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 21.333333333333332,
+      "sku": "SKU-9666",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 14,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 27.11111111111111,
+      "sku": "SKU-3558",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 15,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 32.888888888888886,
+      "sku": "SKU-3047",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 16,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 38.666666666666664,
+      "sku": "SKU-3747",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 17,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 44.44444444444444,
+      "sku": "SKU-1189",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 18,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 50.22222222222222,
+      "sku": "SKU-3734",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 19,
+      "corredor": 34.4,
+      "x": 34.4,
+      "y": 56.0,
+      "sku": "SKU-5658",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 20,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 4.0,
+      "sku": "SKU-8734",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 21,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 9.777777777777779,
+      "sku": "SKU-2528",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 22,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 15.555555555555555,
+      "sku": "SKU-4556",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 23,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 21.333333333333332,
+      "sku": "SKU-9838",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 24,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 27.11111111111111,
+      "sku": "SKU-6393",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 25,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 32.888888888888886,
+      "sku": "SKU-9792",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 26,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 38.666666666666664,
+      "sku": "SKU-9433",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 27,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 44.44444444444444,
+      "sku": "SKU-8513",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 28,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 50.22222222222222,
+      "sku": "SKU-8041",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 29,
+      "corredor": 44.8,
+      "x": 44.8,
+      "y": 56.0,
+      "sku": "SKU-7235",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 30,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 4.0,
+      "sku": "SKU-8099",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 31,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 9.777777777777779,
+      "sku": "SKU-1775",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 32,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 15.555555555555555,
+      "sku": "SKU-9226",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 33,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 21.333333333333332,
+      "sku": "SKU-4152",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 34,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 27.11111111111111,
+      "sku": "SKU-2585",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 35,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 32.888888888888886,
+      "sku": "SKU-8555",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 36,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 38.666666666666664,
+      "sku": "SKU-2021",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 37,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 44.44444444444444,
+      "sku": "SKU-4843",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 38,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 50.22222222222222,
+      "sku": "SKU-7873",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 39,
+      "corredor": 55.2,
+      "x": 55.2,
+      "y": 56.0,
+      "sku": "SKU-1161",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 40,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 4.0,
+      "sku": "SKU-1995",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 41,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 9.777777777777779,
+      "sku": "SKU-8629",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 42,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 15.555555555555555,
+      "sku": "SKU-2016",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 43,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 21.333333333333332,
+      "sku": "SKU-7439",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 44,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 27.11111111111111,
+      "sku": "SKU-7863",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 45,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 32.888888888888886,
+      "sku": "SKU-9529",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 46,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 38.666666666666664,
+      "sku": "SKU-5887",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 47,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 44.44444444444444,
+      "sku": "SKU-5859",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 48,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 50.22222222222222,
+      "sku": "SKU-9571",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 49,
+      "corredor": 65.6,
+      "x": 65.6,
+      "y": 56.0,
+      "sku": "SKU-8208",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 50,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 4.0,
+      "sku": "SKU-3062",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 51,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 9.777777777777779,
+      "sku": "SKU-1064",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 52,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 15.555555555555555,
+      "sku": "SKU-9006",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 53,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 21.333333333333332,
+      "sku": "SKU-6463",
+      "capacidade_kg": 500
+    },
+    {
+      "rack_id": 54,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 27.11111111111111,
+      "sku": "SKU-3027",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 55,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 32.888888888888886,
+      "sku": "SKU-6258",
+      "capacidade_kg": 1500
+    },
+    {
+      "rack_id": 56,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 38.666666666666664,
+      "sku": "SKU-7736",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 57,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 44.44444444444444,
+      "sku": "SKU-6892",
+      "capacidade_kg": 1000
+    },
+    {
+      "rack_id": 58,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 50.22222222222222,
+      "sku": "SKU-7184",
+      "capacidade_kg": 2000
+    },
+    {
+      "rack_id": 59,
+      "corredor": 76.0,
+      "x": 76.0,
+      "y": 56.0,
+      "sku": "SKU-7278",
+      "capacidade_kg": 500
+    }
+  ],
+  "obstaculos": [
+    {
+      "x_min": 30.5,
+      "x_max": 33.5,
+      "y_min": 13.5,
+      "y_max": 16.5
+    },
+    {
+      "x_min": 30.5,
+      "x_max": 33.5,
+      "y_min": 43.5,
+      "y_max": 46.5
+    },
+    {
+      "x_min": 48.5,
+      "x_max": 51.5,
+      "y_min": 13.5,
+      "y_max": 16.5
+    },
+    {
+      "x_min": 48.5,
+      "x_max": 51.5,
+      "y_min": 43.5,
+      "y_max": 46.5
+    },
+    {
+      "x_min": 66.5,
+      "x_max": 69.5,
+      "y_min": 13.5,
+      "y_max": 16.5
+    },
+    {
+      "x_min": 66.5,
+      "x_max": 69.5,
+      "y_min": 43.5,
+      "y_max": 46.5
+    }
+  ],
+  "estacoes_carregamento": [
+    {
+      "estacao_id": 0,
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "estacao_id": 1,
+      "x": 2.0,
+      "y": 58.0
+    },
+    {
+      "estacao_id": 2,
+      "x": 98.0,
+      "y": 2.0
+    },
+    {
+      "estacao_id": 3,
+      "x": 98.0,
+      "y": 58.0
+    }
+  ]
+}
